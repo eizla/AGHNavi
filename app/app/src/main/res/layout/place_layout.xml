@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/placePhoto"
+            android:src="@drawable/splash_background"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/placeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_alignStart="@+id/placeNameTextView"
+            android:src="@drawable/ic_directions_bus_black_24dp" />
+
+        <ImageView
+            android:id="@+id/naviIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@+id/distanceTextView"
+            android:src="@drawable/ic_near_me_black_24dp" />
+
+        <TextView
+            android:id="@+id/distanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="350m"
+            android:textColor="#000"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_below="@+id/placeIcon"
+            android:layout_toRightOf="@id/placePhoto"
+            android:background="#fff">
+
+        </View>
+
+        <TextView
+            android:id="@+id/placeNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/placePhoto"
+            android:maxLength="20"
+            android:text="Place Name"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/placeAddressTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/placeNameTextView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/placePhoto"
+            android:text="Place Address"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/placeAddressTextView"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/placePhoto"
+            android:background="#ffd5d5d5">
+
+        </View>
+
+        <ImageView
+            android:id="@+id/starImageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/line"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/placePhoto"
+            android:gravity="center"
+            android:src="@drawable/ic_star_border_black_24dp" />
+
+        <TextView
+            android:id="@+id/ratingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/line"
+            android:gravity="center_vertical"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/starImageView"
+            android:layout_toStartOf="@+id/moneyImageView"
+            android:text="rat" />
+
+        <ImageView
+            android:id="@+id/moneyImageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@+id/line"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toStartOf="@+id/priceRatingTextView"
+            android:gravity="center"
+            android:src="@drawable/ic_attach_money_black_24dp" />
+
+        <TextView
+            android:id="@+id/priceRatingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:layout_below="@id/line"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:text="price rat" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

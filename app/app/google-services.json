@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "16118467698",
+    "project_id": "campus-navigation-agh"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16118467698:android:48b6848c1ee27050",
+        "android_client_info": {
+          "package_name": "com.aghnavi.agh_navi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16118467698-qu7keb9b6epomoq9aojlou9r1gtb6htm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aghnavi.agh_navi",
+            "certificate_hash": "4216eaebf37d2cad213d31f7f40f88034e5a0669"
+          }
+        },
+        {
+          "client_id": "16118467698-f9mtb11nvvvnmju8u9p4qq9u3v4vhpt2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzngkGTeU38Gqzwu946kR0ANJEEc8B6hY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

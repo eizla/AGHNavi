@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/categoryNotificationsTitle">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/notificationKey"
+            android:title="@string/notificationTitle"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/categoryInformationTitle">
+        <Preference
+        android:title="@string/informationTitle"
+        android:key="@string/informationKey">
+
+        </Preference>
+        <Preference
+            android:title="@string/policyPrivacyTitle"
+            android:key="@string/policyPrivacyKey"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/categoryOthersTitle">
+        <Preference
+            android:title="@string/relatedAccountsTitle"
+            android:key="@string/relatedAccountsKey"/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,157 @@
+<resources>
+    <string name="app_name">AGH_Navi</string>
+    <string-array name="event_array"></string-array>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="title_activity_place_picker">PlacePickerActivity</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="DirectionsApiKey">AIzaSyAG4diPChkg1sauesoeUhOge8jk-PWFwXw</string>
+
+    <!--Login Activity-->
+    <string name="helloTextView">Witamy w aplikacji AGH Navi</string>
+    <string name="signInButton">Zaloguj przy pomocy konta Google</string>
+    <string name="skipButton">Kontynuuj bez logowania</string>
+    <!--Login Activity-->
+
+    <!-- Find directions activity-->
+    <string name="startEditText">Punkt startowy</string>
+    <string name="endEditText">Punkt docelowy</string>
+    <string name="buildingsTextView">Budynki</string>
+    <string name="placesTextView">Miejsca w pobliżu</string>
+    <string name="showDirectionsButton">Wyznacz trasę</string>
+    <!-- Find directions activity-->
+
+    <!--Settings-->
+
+    <string name="categoryNotificationsTitle">Powiadomienia</string>
+    <string name="categoryInformationTitle">Informacje</string>
+    <string name="categoryOthersTitle">Inne</string>
+    <string name="notificationKey">Notifications</string>
+    <string name="notificationTitle">Powiadomienia</string>
+    <string name="informationKey">Information</string>
+    <string name="informationTitle">O aplikacji</string>
+    <string name="policyPrivacyKey">PolicyPrivacy</string>
+    <string name="policyPrivacyTitle">Polityka Prywatności</string>
+    <string name="relatedAccountsKey">RelatedAccounts</string>
+    <string name="relatedAccountsTitle">Powiązane konta</string>
+
+    <string name="welcome">
+        Dziękujemy za skorzystanie z naszej aplikacji. Życzymy udanych podróży po kampuse uczelni.
+    </string>
+    <string name="about">
+        Aplikacja została stworzona w ramach projektu inżynierskiego przez czwórkę studnetów z Akademii Górniczo-Hutniczej w Krakowie
+        przy wykorzystaniu AnyPlace.
+
+    </string>
+    <!--Settings-->
+
+
+    <!--Calendar-->
+
+    <string name="description">Dodawaj zajęcia, egzaminy i kolokwia na uczelni, a aplikacja wskaże Ci drogę na każde wydarzenie</string>
+    <string name="addEventButtonText">DODAJ WYDARZENIE</string>
+
+    <!--Calendar-->
+
+    <!--PlacesInNeighbourhood-->
+    <string-array name="place_types">
+        <item>Bar</item>
+        <item>Restauracja</item>
+        <item>Kawiarnia</item>
+        <item>Przystanek autobusowy</item>
+        <item>Sklep</item>
+    </string-array>
+    <!--PlacesInNeighbourhood-->
+
+    <!--Choice Activity-->
+    <string name="outdoor">Outdoor</string>
+    <string name="indoor">Indoor</string>
+    <!--Choice Activity-->
+
+    <!--ANYPLACE-->
+    <string name="default_server_ip_address">https://campusnavigation.preview.cloudart.pl</string>
+
+    <string name="app_name_logger">AnyPlace Logger</string>
+    <string name="app_name_about">About AnyPlace</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Required by AndroidFileBrowser -->
+    <string name="prefs_name_logger">AnyPlace Logger Preferences</string>
+    <string name="app_choose_folder">Choose folder</string>
+    <string name="parentDir">..</string>
+    <string name="homeDir">.</string>
+    <string name="rootDir">/</string>
+    <string name="logger_sampling_title">Sampling Settings</string>
+    <string name="logger_samples_interval_title">Samples Interval</string>
+    <string name="logger_samples_interval_summary">Time between two consecutive samplings</string>
+    <string name="logger_storing_title">Storing Settings</string>
+    <string name="logger_folder_browser_title">Folder</string>
+    <string name="logger_folder_browser_summary">The folder to store RSS log files</string>
+    <string name="logger_filename_title">Filename</string>
+    <string name="logger_filename_summary">The file contains RSS log records</string>
+    <string name="logger_uploading_title">Uploading Settings</string>
+    <string name="logger_server_Username_title">Username</string>
+    <string name="logger_server_Username_summary">The logger\'s username</string>
+    <string name="logger_server_Password_title">Password</string>
+    <string name="logger_server_Password_summary">The logger\'s password</string>
+    <string name="logger_others_title">Other Settings</string>
+    <string name="logger_add_building_title">Add Building</string>
+    <string name="logger_add_building_summary">Open Anyplace Architect</string>
+
+    <string-array name="intervalArray">
+        <item>0.5 sec</item>
+        <item>1 sec</item>
+        <item>2 sec</item>
+    </string-array>
+    <string-array name="intervalValues">
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+    </string-array>
+
+    <string name="walk_bar_max">30</string>
+    <string name="prefs_name_anyplace">AnyPlace Preferences</string>
+    <string name="algorithms_title">Algorytmy pozycjonowania</string>
+    <string name="algorithms_summary">Wybierz jeden z algorytmów w celu określenie pozycji</string>
+
+    <string-array name="AlgorithmsFullNames">
+
+        <!-- <item>Radial Basis Function (RBF) C Library </item> -->
+        <item>K Najbliższych Sąsiadów (KNN)</item>
+        <item>Weighted K Nearest Neighbor (WKNN)</item>
+        <item>Maksymalizacja Posteriori (MAP)</item>
+        <item>Minimalizacja Błędu Średniokwadratowego (MMSE)</item>
+    </string-array>
+    <string-array name="AlgorithmsValues">
+
+        <!-- <item>RBF</item> -->
+        <item>KNN</item>
+        <item>WKNN</item>
+        <item>MAP</item>
+        <item>MMSE</item>
+    </string-array>
+    <string-array name="AlgorithmsDescriptions">
+
+        <!-- <item>The RBF is is an artificial neural network that uses radial basis functions as activation functions. The output of the network is a linear combination of radial basis functions  </item> -->
+        <item>KNN (K Nearest Neighbours, pl. K Najbliższych Sąsiadów) - algorytm estymujący nieznaną lokalizację użytkownika jako średnią K lokacji posiądających najkrótszą euklidesową odległość między obecnie obserwowanymi śladami RSS i odpowiadającymi śladami z radiomapy.</item>
+        <item>WKNN (Weighted K Nearest Neighbours, pl. K Najbliższych Sąsiadów z wagami) - wariant algorytmu KNN estymujący nieznaną lokalizację użytkownika jako średnią wagową K lokacji posiądających najkrótszą euklidesową odległość między obecnie obserwowanymi śladami RSS i odpowiadającymi śladami z radiomapy.. Waga każdej lokacji jest równa odwrotności odległości.</item>
+        <item>MAP (Maximum a Posteriori) - algorytm probabilistyczny, który estymuje nieznaną lokalizację użytkownika przez maksymalizowanie prawdopodobieństwa warunkowego każdej lokalizacji w radio mapie przy otrzymywanym w tym czasie śladzie RSS (posteriori).</item>
+        <item>MMSE (Minimum mean square error, pl. Minimalizacja Błędu Średniokwadratowego) -  algorytm probabilistyczny estymujący nieznaną lokalizację użytkownika przez wyliczenie spodziewanej wartości lokalizacji, która jest równa sumie wagowej wszystkich lokalizacji w radio mapie gdzie wagi są równe warunkowemu prawdopodobieństwu każdej lokalizacji w radio mapie przy otrzymywanym w tym czasie śladzie RSS (posteriori).</item>
+
+        <!--
+        <item>KNN algorithm estimates the unknown user location as the average of K locations which have the shortest Euclidean distances between the currently observed RSS fingerprint and the respective mean value fingerprints in the radiomap.</item>
+        <item>The WKNN algorithm is a variant of KNN and estimates the unknown user location as the weighted average of K locations which have the shortest Euclidean distances between the currently observed RSS fingerprint and the respective mean value fingerprints in the radiomap. The weight of each location is set equal to the inverse of the distance.</item>
+        <item>The MAP algorithm is a probabilistic approach that estimates the unknown user location by maximizing the conditional probability of each location in the radiomap given the currently observed fingerprint (posterior).</item>
+        <item>The MMSE algorithm is a probabilistic approach that estimates the unknown user location by calculating the expected value of the location, which is equivalent to the weighted sum of the loations in the radiomap while the weights are set equal to the conditional probability of each location in the radiomap given the currently observed fingerprint (posterior).</item>
+        -->
+    </string-array>
+    <string-array name="AlgorithmsNames">
+        <!-- <item> Radial Basis Function (RBF)</item> -->
+        <item> K Nearest Neighbor (KNN)</item>
+        <item> Weighted K Nearest Neighbor (WKNN)</item>
+        <item> Maximum A Posteriori (MAP)</item>
+        <item> Minimum Mean Square Error (MMSE)</item>
+    </string-array>
+
+</resources>

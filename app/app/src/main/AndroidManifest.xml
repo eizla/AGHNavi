@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.aghnavi.agh_navi">
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="26"
+        tools:overrideLibrary="com.google.android.gms.auth.api, com.github.sundeepk.compactcalendarview" />
+
+    <!-- WIFI -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.emildesign.navigationapplication.permission.MAPS_RECEIVE" />
+    <!-- GMS -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <!-- STORAGE -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="AGH Navi"
+        android:theme="@style/AppTheme">
+
+        <!-- ENTRY SPLASH -->
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- DEBUG -->
+        <activity
+            android:name=".Calendar.CalendarActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".Calendar.AddEventActivity"
+            android:parentActivityName=".Calendar.CalendarActivity" />
+
+        <!-- NAVIGATION DRAWER -->
+        <activity
+            android:name=".BaseNavigatorActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- MAP NAVIGATION -->
+        <activity
+            android:name=".MapNavigationActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="campusnavigation.preview.cloudart.pl"
+                    android:pathPrefix="/getnavigation"
+                    android:scheme="http" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".MapNavigationActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/anyplace_searchable" />
+        </activity>
+
+        <!-- POINT TO POINT ACTIVITY -->
+        <activity
+            android:name=".PointToPointActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="campusnavigation.preview.cloudart.pl"
+                    android:pathPrefix="/getnavigation"
+                    android:scheme="http" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".PointToPointActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/anyplace_searchable" />
+        </activity>
+
+        <!-- ANYPLACE ACTIVITIES -->
+        <activity
+            android:name=".anyplace.old.activity.AnyplaceAboutActivity"
+            android:label="@string/app_name_about"
+            android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- singleTop before <0.8 ! -->
+        <activity
+            android:name=".anyplace.old.activity.UnifiedNavigationActivity"
+            android:icon="@drawable/anyplace_logo_icon_actionbar_white"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="campusnavigation.preview.cloudart.pl"
+                    android:pathPrefix="/getnavigation"
+                    android:scheme="http" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".UnifiedNavigationActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/anyplace_searchable" />
+        </activity>
+        <activity
+            android:name=".anyplace.old.activity.SearchPOIActivity"
+            android:label="Search POI"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/anyplace_searchable" />
+        </activity>
+        <activity
+            android:name=".anyplace.old.activity.SelectBuildingActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".anyplace.old.activity.AnyplacePrefs"
+            android:icon="@drawable/anyplace_logo_icon_actionbar_white"
+            android:label="@string/prefs_name_anyplace"
+            android:screenOrientation="nosensor" />
+        <!-- END OF ANYPLACE ACTIVITIES -->
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="18ac511a1ea9d257a683450bbbc9debd5c3b197e" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:launchMode="singleTask"
+            android:theme="@style/MapsToolbar" />
+        android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".Places.PlacesInNeighbourhoodActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".Calendar.DayActivity"
+            android:parentActivityName=".Calendar.CalendarActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".Settings.SettingsActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".Settings.InformationActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".Settings.PolicyPrivacyActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".Settings.RelatedAccountsActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".Calendar.AddEventActivityNew"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".Calendar.EditEventActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".TestActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name=".ChoiceActivity"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name=".Outdoor.FindDirectionsActivity"
+            android:theme="@style/GreenToolbarTheme" />
+        <activity
+            android:name=".Outdoor.OutdoorNavigationActivity"
+            android:theme="@style/GreenToolbarTheme"/>
+    </application>
+
+</manifest>

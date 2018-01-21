@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#00693c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:titleTextColor="#fff">
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/startDateTextView"
+        android:text="DATA POCZĄTKOWA"
+        android:textColor="@color/toolbarGreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"/>
+
+
+    <EditText
+        android:id="@+id/startDateEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startDateTextView"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/transparent"
+        android:layout_toStartOf="@+id/startDateTimeEditText"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <EditText
+        android:id="@+id/startDateTimeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startDateTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="6dp"
+        android:gravity="right"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/startDateEditText"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/endDateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:text="DATA ZAKOŃCZENIA"
+        android:textColor="@color/toolbarGreen" />
+
+    <EditText
+        android:id="@+id/endDateEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/endDateTextView"
+        android:layout_toStartOf="@+id/endDateTimeEditText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <EditText
+        android:id="@+id/endDateTimeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/endDateTextView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/transparent"
+        android:gravity="right"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/endDateEditText"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/eventNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:text="NAZWA WYADRZENIA"
+        android:textColor="@color/toolbarGreen"/>
+
+    <EditText
+        android:id="@+id/eventNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventNameTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/transparent"/>
+
+    <View
+        android:id="@+id/line3"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/eventNameEditText"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/eventTypeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line3"
+        android:text="TYP WYADRZENIA"
+        android:textColor="@color/toolbarGreen"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp" />
+
+    <EditText
+        android:id="@+id/eventTypeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventTypeTextView"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/transparent"
+        android:hint="Wybierz typ wydarzenia"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <View
+        android:id="@+id/line3.5"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/eventTypeEditText"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/eventRecurrenceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line3.5"
+        android:text="POWTARZANIE"
+        android:textColor="@color/toolbarGreen"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp" />
+
+    <EditText
+        android:id="@+id/eventRecurrenceEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventRecurrenceTextView"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/transparent"
+        android:hint="Wybierz powtarzalność"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <View
+        android:id="@+id/line4"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/eventRecurrenceEditText"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/eventPlaceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line4"
+        android:text="MIEJSCE"
+        android:textColor="@color/toolbarGreen"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp" />
+
+    <fragment
+        android:id="@+id/place_autocomplete_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventPlaceTextView"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        />
+
+    <View
+        android:id="@+id/line5"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/place_autocomplete_fragment"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/eventDescriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line5"
+        android:text="OPIS WYDARZENIA"
+        android:textColor="@color/toolbarGreen"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp" />
+
+    <EditText
+        android:id="@+id/eventDescriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventDescriptionTextView"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/transparent"/>
+
+    <Button
+        android:id="@+id/saveChangesButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/buttonRed"
+        android:text="ZAPISZ ZMIANY"
+        android:textColor="#fff" />
+
+</RelativeLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.aghnavi.agh_navi.layout.map.MapWrapperLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MapNavigationActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <!-- Main content -->
+
+        <fragment
+            android:id="@+id/wrapped_map"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/map_floating_navigation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:src="@drawable/ic_navigation_black_24dp"
+            app:fabSize="normal"
+            app:layout_anchor="@+id/wrapped_map"
+            app:layout_anchorGravity="bottom|center_horizontal"
+            app:useCompatPadding="true"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/map_location_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:src="@drawable/ic_gps_fixed_black_24dp"
+            app:fabSize="mini"
+            app:layout_anchor="@+id/wrapped_map"
+            app:layout_anchorGravity="bottom|right"
+            app:useCompatPadding="true" />
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/map_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!--
+            <SearchView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/searchview_oval"
+                android:iconifiedByDefault="false" />
+                -->
+
+        </android.support.v7.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="345dp">
+
+            <TextView
+                android:id="@+id/floorNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/map_floor_up_button"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:padding="4dp"
+                android:text="Piętro: -" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/map_floor_up_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/map_floor_down_button"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="top|left"
+                android:layout_marginEnd="3dp"
+                android:paddingEnd="5dp"
+                android:src="@drawable/ic_arrow_drop_up_black_24dp"
+                app:fabSize="mini"
+                app:layout_anchorGravity="center_vertical|right" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/map_floor_down_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom|left"
+                android:layout_marginEnd="3dp"
+                android:paddingEnd="5dp"
+                android:src="@drawable/ic_arrow_drop_down_black_24dp"
+                app:fabSize="mini"
+                app:layout_anchorGravity="center_vertical|right" />
+        </RelativeLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</com.aghnavi.agh_navi.layout.map.MapWrapperLayout>

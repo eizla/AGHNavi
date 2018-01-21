@@ -1,0 +1,99 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"/>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@android:color/transparent</item>
+    </style>
+    <style name="GreenToolbarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolbarGreen</item>
+        <item name="colorPrimaryDark">@color/toolbarGreenDark</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="colorAccent">@color/toolbarGreenDark</item>
+    </style>
+
+    <style name="MapsToolbar"  parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolbarGreen</item>
+        <item name="colorPrimaryDark">@color/toolbarGreenDark</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+        <item name="android:textColorSecondary">@color/gray</item>
+        <item name="colorAccent">@color/toolbarGreenDark</item>
+    </style>
+    <style name="WhiteToolbarTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomDayTextAppearance"
+        parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/buttonRed</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <!--ANYPLACE-->
+    <!--
+    Base application theme, dependent on API level. This theme is replaced
+    by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+-->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppAnyplace" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="Theme.AnyplaceTheme.ProgressBarHorizontal" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">10dip</item>
+    </style>
+
+    <style name="Theme.AnyplaceTheme" parent="Theme.AppCompat">
+        <item name="actionBarStyle">@style/Widget.AnyplaceTheme.ActionBar</item>
+        <item name="android:actionBarStyle">@style/Widget.AnyplaceTheme.ActionBar</item>
+    </style>
+
+    <style name="Widget.AnyplaceTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="displayOptions">useLogo|showHome|showTitle</item>
+        <item name="height">?attr/actionBarSize</item>
+        <item name="android:paddingLeft">0dip</item>
+        <item name="android:paddingTop">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+        <item name="android:paddingBottom">0dip</item>
+        <!--<item name="homeLayout">@layout/abs__action_bar_home</item>-->
+        <item name="titleTextStyle">@style/TextAppearance.AppCompat.Widget.ActionBar.Title</item>
+        <item name="subtitleTextStyle">@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle</item>
+        <!--<item name="background">@drawable/abs__ab_transparent_dark_holo</item>-->
+        <!--<item name="backgroundStacked">@drawable/abs__ab_stacked_transparent_dark_holo</item>-->
+        <!--<item name="backgroundSplit">@drawable/abs__ab_bottom_transparent_dark_holo</item>-->
+        <item name="divider">?attr/dividerVertical</item>
+        <item name="progressBarStyle">@style/Widget.AppCompat.ProgressBar.Horizontal</item>
+        <item name="indeterminateProgressStyle">@style/Widget.AppCompat.ProgressBar.Horizontal</item>
+        <item name="progressBarPadding">32dip</item>
+        <item name="itemPadding">8dip</item>
+    </style>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aghnavi.agh_navi.ChoiceActivity">
+
+    <RelativeLayout
+        android:id="@+id/left"
+        android:background="@drawable/agh"
+        android:layout_toLeftOf="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/outdoor_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/outdoor" />
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dip"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:background="@android:color/black" />
+
+    <RelativeLayout
+        android:id="@+id/right"
+        android:background="@drawable/indoor"
+        android:layout_toRightOf="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/indoor_button"
+        android:text="@string/indoor"
+        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

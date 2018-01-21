@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:src="@drawable/app_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp" />
+
+    <TextView
+        android:id="@+id/hello_text_view"
+        android:textColor="@color/toolbarGreen"
+        android:text="@string/helloTextView"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/hello_text_view"
+        app:cardBackgroundColor="@color/buttonRed"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:text="@string/signInButton"
+            android:textColor="@color/white"
+            android:background="@android:color/transparent"
+            android:layout_below="@+id/image_view"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cardBackgroundColor="@color/buttonRed"
+        android:layout_below="@+id/card_view_1"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <Button
+            android:id="@+id/skip_button"
+            android:text="@string/skipButton"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

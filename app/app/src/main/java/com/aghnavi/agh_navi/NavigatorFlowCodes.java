@@ -1,0 +1,25 @@
+package com.aghnavi.agh_navi;
+
+
+public interface NavigatorFlowCodes {
+
+    int EVENT_RESULT_OK = 4444;
+    int SOON_RESULT_OK = 5555;
+
+    int REQUEST_PLACE_PICK_TO_SETTINGS = 3333;
+    int REQUEST_EVENT_PICK_TO_SETTINGS = 3334;
+    int REQUEST_SOON_PICK_TO_SETTINGS = 3335;
+
+    int REQUEST_PLACE_PICK_TO_PLACE = 3336;
+    int REQUEST_EVENT_PICK_TO_PLACE = 3337;
+    int REQUEST_SOON_PICK_TO_PLACE =  3338;
+
+    int REQUEST_PLACE_PICK_TO_CALENDAR = 3339;
+    int REQUEST_EVENT_PICK_TO_CALENDAR = 3340;
+    int REQUEST_SOON_PICK_TO_CALENDAR = 3341;
+
+
+}
+
+
+

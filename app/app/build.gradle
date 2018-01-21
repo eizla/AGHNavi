@@ -1,0 +1,161 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.aghnavi.agh_navi"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 11
+        versionName "1.0"
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        // used by Room, to test migrations
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+    }
+    signingConfigs {
+        if (System.getenv("GITLAB_CI") && System.getenv("KEYSTORE_PASS")) {
+            release {
+                storeFile rootProject.file('aghnavi-signed-key.jks')
+                storePassword System.getenv("KEYSTORE_PASS")
+                keyAlias System.getenv("ALIAS_NAME")
+                keyPassword System.getenv("ALIAS_PASS")
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+            ext.betaDistributionGroupAliases = "devs"
+
+            if (System.getenv("GITLAB_CI")) {
+                ext.betaDistributionReleaseNotes = "By " + System.getenv("GITLAB_USER_EMAIL") + ". Last commit message: " + System.getenv("COMMIT_MESSAGE")
+
+                if (System.getenv("KEYSTORE_PASS")) {
+                    signingConfig signingConfigs.release
+                }
+            }
+        }
+        debug {
+            // Only use this flag on builds you don't proguard or upload to beta-by-crashlytics
+            ext.alwaysUpdateBuildId = false
+            ext.enableCrashlytics = false
+        }
+    }
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            //more specific directories go on top (maintain hierarchy)
+                            'src/main/res/layout/anyplace',
+                            'src/main/res/layout/navigator',
+                            'src/main/res/menu/anyplace',
+                            'src/main/res/menu/navigator',
+                            'src/main/res/drawable/anyplace',
+                            'src/main/res/drawable/navigator',
+                            'src/main/res/layout',
+                            'src/main/res/menu',
+                            'src/main/res/drawable',
+                            'src/main/res'
+                    ]
+
+            // used by Room, to test migrations
+            androidTest.assets.srcDirs +=  files("$projectDir/schemas".toString())
+        }
+
+
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api('com.google.api-client:google-api-client-android:1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    api('com.google.apis:google-api-services-calendar:v3-rev254-1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    api('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true;
+    }
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.android.gms:play-services-auth:11.6.2'
+    compile 'com.google.android.gms:play-services-places:11.6.2'
+    compile 'com.github.sundeepk:compact-calendar-view:2.0.3-beta'
+
+    //Matrix for KalmanFilter class
+    //Flurry Analytics (anyplace 4.2.0)
+    //Gson (anyplace 2.2.4)
+    //Apache HTTP Library for API23+
+    //Google Collections
+
+    compile 'com.google.android.gms:play-services-auth:11.6.2'
+    compile 'pub.devrel:easypermissions:0.4.0'
+    compile 'com.google.android.gms:play-services-maps:11.6.2'
+    compile 'com.google.android.gms:play-services-places:11.6.2'
+    compile 'com.github.sundeepk:compact-calendar-view:2.0.3-beta'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
+    compile 'com.android.support:preference-v7:26.1.0'
+    compile 'com.android.support:support-v4:26.1.0'
+    compile 'com.android.support:support-vector-drawable:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.google.android.gms:play-services-location:11.6.2'
+    compile 'com.google.maps.android:android-maps-utils:0.4.3'
+    compile 'gov.nist.math:jama:1.0.3'
+    compile 'com.flurry.android:analytics:6.3.1'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'cz.msebera.android:httpclient:4.4.1.1'
+    compile 'com.android.support:multidex:1.0.2'
+    compile 'com.sothree.slidinguppanel:library:3.4.0'
+    compile 'com.google.maps:google-maps-services:0.1.20'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    implementation "android.arch.persistence.room:runtime:$rootProject.roomVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.roomVersion"
+    androidTestImplementation "android.arch.persistence.room:testing:$rootProject.roomVersion"
+
+    //LiveData
+    implementation "android.arch.lifecycle:extensions:1.0.0"
+}

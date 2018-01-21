@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:id="@+id/ptp_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/source_searchview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:iconifiedByDefault="false"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:defaultQueryHint="Source"
+            app:queryHint="Source">
+
+        </android.support.v7.widget.SearchView>
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/destination_searchview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:padding="4dp"
+            app:defaultQueryHint="Destination"
+            app:queryHint="Destination" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/recentTx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Ostatnie"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+            <ListView
+                android:id="@+id/recentList"
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                android:padding="4dp" />
+
+            <TextView
+                android:id="@+id/popularTx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Popularne"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+            <ListView
+                android:id="@+id/popularList"
+                android:layout_width="match_parent"
+                android:layout_height="127dp"
+                android:padding="4dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/navigateButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="Wyznacz Trasę"
+                    android:layout_alignParentTop="true" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
